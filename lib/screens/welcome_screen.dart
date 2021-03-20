@@ -41,7 +41,6 @@ class WelcomeScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(29),
                 child: FlatButton(
                   onPressed: () {
-                    print("works!");
                     Navigator.of(context).pushNamed(LoginScreen.routeName);
                   },
                   child: Text(
@@ -63,7 +62,6 @@ class WelcomeScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(29),
                 child: FlatButton(
                   onPressed: () {
-                    print("works!");
                     Navigator.of(context).pushNamed(SignupScreen.routeName);
                   },
                   child: Text(
