@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "233458718978",
+    "project_id": "bench-331ff",
+    "storage_bucket": "bench-331ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233458718978:android:e7c5cde8f9476b81780a1b",
+        "android_client_info": {
+          "package_name": "com.example.bench"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "233458718978-bsdlc1emhq20idhc49hjcmvfbvkt3ffk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvQgHMXAV68R-36h9OwUz3Y1XodvRyino"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "233458718978-bsdlc1emhq20idhc49hjcmvfbvkt3ffk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
