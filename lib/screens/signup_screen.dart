@@ -1,5 +1,9 @@
-import 'package:bench/screens/login_screen.dart';
+import 'package:bench/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
+
+import './login_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   static const routeName = '/signup-screen';
@@ -9,26 +13,49 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
+  final _auth = FirebaseAuth.instance;
+
   final _formKey = GlobalKey<FormState>();
   String _userFullName;
   String _userEmail;
   String _username;
   String _password;
 
-  void _trySubmit() {
+  Future<void> _trySubmit(BuildContext context) async {
+    print("try submit called!");
     final isValid = _formKey.currentState.validate();
     FocusScope.of(context).unfocus(); //Close keyboard
 
     if (isValid) {
       _formKey.currentState.save();
 
-      // widget.submitFunction(
-      //   _userEmail.trim(),
-      //   _userPhone,
-      //   _userPass,
-      //   _logInMode,
-      //   context,
-      // );
+      final email = _userEmail.trim();
+      final password = _password;
+      final username = _username.trim();
+      final name = _userFullName.trim();
+
+      _auth
+          .createUserWithEmailAndPassword(email: email, password: password)
+          .then((value) async {
+        Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+      });
+
+      // await _auth
+      //     .createUserWithEmailAndPassword(
+      //   email: email,
+      //   password: password,
+      // )
+      //     .then((value) async {
+      //   // final user = FirebaseAuth.instance.currentUser;
+
+      //   // await FirebaseFirestore.instance.collection('users').add({
+      //   //   "uid": user.uid,
+      //   //   "createdAt": Timestamp.now(),
+      //   //   "username": username,
+      //   //   "name": name,
+      //   //   "email": email,
+      //   // });
+      // });
     }
   }
 
@@ -41,7 +68,7 @@ class _SignupScreenState extends State<SignupScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              height: 100,
+              height: 80,
             ),
             Container(
               child: Center(
@@ -59,7 +86,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 30),
             Form(
               key: _formKey,
               child: Padding(
@@ -217,8 +244,8 @@ class _SignupScreenState extends State<SignupScreen> {
                       constraints:
                           BoxConstraints.tightFor(height: 50, width: 275),
                       child: ElevatedButton(
-                        onPressed: () {
-                          print("works!");
+                        onPressed: () async {
+                          await _trySubmit(context);
                         },
                         child: Text(
                           "Sign Up",
@@ -248,7 +275,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 50),
+            SizedBox(height: 60),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 45.0),
               child: Row(
@@ -280,7 +307,7 @@ class _SignupScreenState extends State<SignupScreen> {
               ),
             ),
             SizedBox(
-              height: 50,
+              height: 30,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
