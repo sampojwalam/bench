@@ -1,3 +1,5 @@
+import 'package:bench/screens/chart_screen.dart';
+import 'package:bench/screens/glass_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -35,6 +37,7 @@ class _MyAppState extends State<MyApp> {
           // Once complete, show your application
           if (snapshot.connectionState == ConnectionState.done) {
             final _auth = FirebaseAuth.instance;
+
             if (_auth.currentUser != null) {
               return HomeScreen();
             } else {
@@ -68,6 +71,8 @@ class _MyAppState extends State<MyApp> {
         LoginScreen.routeName: (ctx) => LoginScreen(),
         SignupScreen.routeName: (ctx) => SignupScreen(),
         WelcomeScreen.routeName: (ctx) => WelcomeScreen(),
+        GlassScreen.routeName: (ctx) => GlassScreen(),
+        ChartScreen.routeName: (ctx) => ChartScreen(),
       },
     );
   }

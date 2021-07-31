@@ -31,6 +31,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core: ^1.0.1
   firebase_auth: ^1.0.1
+  cloud_firestore: ^1.0.1
+  fl_chart: ^0.30.0
+
 
 
 dev_dependencies:
@@ -53,6 +56,8 @@ flutter:
     - assets/images/teddy.png
     - assets/images/bench_logo.png
     - assets/images/weightlifting.png
+    - assets/images/gradient.png
+    - assets/images/bg.png
     - assets/icons/google_logo.png
     - assets/icons/apple_logo.png
     - assets/icons/facebook_logo.png

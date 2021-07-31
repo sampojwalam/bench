@@ -1,3 +1,5 @@
+import 'package:bench/screens/chart_screen.dart';
+import 'package:bench/screens/glass_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -55,7 +57,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   icon: Icon(Icons.exit_to_app),
                   label: Text("log out"),
-                )
+                ),
+                SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(ChartScreen.routeName);
+                  },
+                  child: Text("Charts 😩😩😩"),
+                ),
+                SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(GlassScreen.routeName);
+                  },
+                  child: Text("Glassmorphic blurs 😤😤😤"),
+                ),
               ],
             ),
           ),
