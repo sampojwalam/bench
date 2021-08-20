@@ -36,10 +36,10 @@ class SettingsScreenBody extends StatelessWidget {
               SizedBox(height: 10),
               Text("Holy mother of animations!!! 🎉"),
               Container(
-                height: 300,
-                width: 300,
+                height: 100,
+                width: 100,
                 child: RiveAnimation.asset(
-                  'assets/animations/messeger_icon.riv',
+                  'assets/animations/play_button.riv',
                 ),
               ),
               SizedBox(height: 10),

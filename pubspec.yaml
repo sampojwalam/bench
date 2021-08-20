@@ -60,6 +60,8 @@ flutter:
     - assets/icons/facebook_logo.png
     - assets/animations/messeger_icon.riv
     - assets/animations/ball_box.riv
+    - assets/animations/play_button.riv
+    - assets/animations/react_native.riv
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
