@@ -18,6 +18,9 @@ class HomeScreenBody extends StatelessWidget {
     "Pull",
     "Legs",
   ];
+
+  final daysOfWeek = ["Su", "M", "T", "W", "Th", "F", "Sa"];
+
   @override
   Widget build(BuildContext context) {
     int _cardCount = 4;
@@ -31,6 +34,67 @@ class HomeScreenBody extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
+            Container(
+              width: MediaQuery.of(context).size.width,
+              child: Row(
+                children: [
+                  Text(
+                    "Your Routine: PPL",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Stack(
+                    children: [
+                      Image(
+                        image: AssetImage(
+                          "assets/images/fire.png",
+                        ),
+                        width: 50,
+                        height: 50,
+                      ),
+                      Positioned(
+                        child: Text(
+                          "16",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        left: 15,
+                        top: 20,
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+            Container(
+              height: 100,
+              child: ListView.builder(
+                itemCount: 7,
+                shrinkWrap: false,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Card(
+                    elevation: 8,
+                    color: Colors.white70,
+                    child: Container(
+                      width: 50,
+                      child: Text(
+                        daysOfWeek[index],
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
             Container(
               height: 150,
               child: ListView.builder(

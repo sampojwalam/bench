@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
           items: [
             Icon(Icons.list),
             Icon(Icons.calendar_today),
-            Icon(Icons.home),
+            Icon(Icons.directions_run),
             Icon(Icons.settings),
             Icon(Icons.exit_to_app),
           ],
